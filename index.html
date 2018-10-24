@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+    action:当前页面的默认提交地址，如果没有设置，则默认提交到当前页
+    method:提交方式
+        get:通过浏览器地址栏传递参数- 不安全，传递的数据比post要小
+        post:将传递的数据封装为formData对象--更安全，。传递的数据比get更大
+-->
+<!--<form action="08-form-test.php" method="post">
+    &lt;!&ndash;如果使用表单的默认提交：就是submit提交
+    要求必须为表单元素设置name属性,目的是为了在传递参数的时候生成对应的key&ndash;&gt;
+    用户名：<input type="text" name="userName"> <br>
+    密码: <input type="text" name ="userPwd"> <br>
+    <input type="submit" value="提交">
+</form>-->
+
+<!--上传文件需要前台设置两个属性
+1.enctype="multipart/form-data:告诉浏览器，现在传递的数据类型不是一个单一的类型，而是包含除字符串之外的其它类型
+2.上传文件只能使用post提交方式-->
+<form action="08-form-test.php" method="post" enctype="multipart/form-data">
+    <!--如果使用表单的默认提交：就是submit提交
+    要求必须为表单元素设置name属性,目的是为了在传递参数的时候生成对应的key-->
+    用户名：<input type="text" name="userName"> <br>
+    密码: <input type="text" name ="userPwd"> <br>
+    图像：<input type="file" name="photo"> <br>
+    <input type="submit" value="提交">
+</form>
+</body>
+</html>
